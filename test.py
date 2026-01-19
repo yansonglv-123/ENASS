@@ -12,7 +12,7 @@ from model import Net, MyDataSet
 TEST_REAL_SCENARIOS = True
 
 # Path to the best checkpoint for evaluation
-BEST_MODEL_PATH = "model_stage_ratio_0.88_ep64_loss0.0054.pt"
+BEST_MODEL_PATH = "CL_APS_nonlinear_model_stage_7.pt"
 
 # Device configuration (Auto-detect)
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -57,9 +57,7 @@ def run_inference():
     model = Net().to(DEVICE)
 
     # 2. Load Weights
-    # Only load if the file exists to prevent crashing in 'Demo Mode' without weights
-    weights_path = BEST_MODEL_PATH if TEST_REAL_SCENARIOS else "model_stage_ratio_0.00_ep36.pt"
-
+    weights_path = BEST_MODEL_PATH 
     if os.path.exists(weights_path):
         try:
             state_dict = torch.load(weights_path, map_location=DEVICE)
@@ -137,3 +135,4 @@ def run_inference():
 
 if __name__ == "__main__":
     run_inference()
+
