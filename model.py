@@ -111,26 +111,6 @@ class Net(torch.nn.Module):
         self.model_mlp.add_module("relu1", torch.nn.ReLU())
         self.model_mlp.add_module("linear2", torch.nn.Linear(4 * 512, 55))
         self.model_mlp.add_module("softmax", torch.nn.LogSoftmax(dim=1))
-        # # 下面降低参数
-        # self.model_cnn = torch.nn.Sequential(
-        #     torch.nn.Conv2d(1, 16, 7, (2, 2), padding=3),  # 加了aps就是1，2不加就是2，2
-        #     # ApsPool(),
-        #     torch.nn.BatchNorm2d(16),
-        #     torch.nn.ReLU(),
-        #     ResidualBlock(16, 32, (2, 2), 16),
-        #     ResidualBlock(32, 32, 1, 16),
-        #     ResidualBlock(32, 64, (2, 2)),
-        #     ResidualBlock(64, 64, 1),
-        #     ResidualBlock(64, 128, (2, 2)),
-        #     ResidualBlock(128, 128, 1),
-        #     torch.nn.AdaptiveAvgPool2d(1)  # 256X1 匹配图片尺寸
-        # )
-        # self.model_lstm = torch.nn.LSTM(input_size=128, hidden_size=256, num_layers=1, batch_first=True)
-        # self.model_mlp = torch.nn.Sequential()
-        # self.model_mlp.add_module("linear1", torch.nn.Linear(256, 2 * 256))
-        # self.model_mlp.add_module("relu1", torch.nn.ReLU())
-        # self.model_mlp.add_module("linear2", torch.nn.Linear(2 * 256, 55))
-        # self.model_mlp.add_module("softmax", torch.nn.LogSoftmax(dim=1))
 
     def forward(self, x):
         batch_size = x.size(0)
@@ -163,3 +143,4 @@ if __name__ == "__main__":
     # Sanity Check to print model structure
     model = Net()
     print(model)
+
