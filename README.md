@@ -19,5 +19,5 @@ The repository is organized as follows:
 ```text
 ├── model.py            # Complete definition of the CNN-LSTM network architecture
 ├── test.py             # Inference script to demonstrate model execution
-├── eval_model.pt      # Pre-trained model weights (for reproducibility)
+├── eval_model.pt       # Pre-trained model weights (for reproducibility)
 └── README.md           # Documentation
