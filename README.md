@@ -6,11 +6,6 @@ Energy-Aware Single-Source Progressive Generalization for Cross-Scene mmWave Rad
 
 > Note:This repository contains the inference code and network architecture for the paper submitted to Sensors (MDPI). The source code is provided to verify the reproducibility of the proposed method.
 
-📝 Abstract
-
-
-
-<!-- ![Model Architecture](pipeline.png) -->
 Download Weights: Please download the pre-trained weights (eval_model.pt) from the Releases Page and place it in the root directory.
 
 📅 Data Availability(https://aiotgroup.github.io/XRF55/)
@@ -22,6 +17,7 @@ The repository is organized as follows:
 ```text
 ├── model.py            # Complete definition of the CNN-LSTM network architecture
 ├── test.py             # Inference script to demonstrate model execution
+├── test2.py            # Inference script for EDL
 ├── eval_model.pt       # Pre-trained model weights (for reproducibility)
 └── README.md           # Documentation
 ```
